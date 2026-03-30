@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Booking.css";
-import Client from "../client/client";
+import Client from "../client/Client";
 import { Card, CardHeader, CardContent, Grid, TextField, Button, Avatar, Select, MenuItem, FormControlLabel, Switch, Typography, Box, Modal,NativeSelect,InputLabel,FormControl, } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import InfoIcon from '@mui/icons-material/Info';
