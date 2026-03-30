@@ -1,0 +1,121 @@
+@import "tailwindcss";
+/* Header cells + body cells = same width */
+.fc-col-header-cell,
+.fc-timegrid-col-frame,
+.fc-timegrid-col-events {
+  min-width: 200px;   /* adjust width as needed */
+  flex: 1 0 auto;     /* flex layout ensures header & body match */
+  box-sizing: border-box;
+}
+
+/* Optional: add borders for clarity */
+.fc .fc-col-header-cell {
+  border-right: 1px solid #ddd;
+}
+.fc .fc-timegrid-col {
+  border-right: 1px solid #ddd;
+}
+
+/* Scrollable calendar */
+.fc .fc-scroller {
+  overflow-x: auto;
+}
+
+/* Make calendar container responsive */
+.fc {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .fc-col-header-cell,
+  .fc-timegrid-col-frame,
+  .fc-timegrid-col-events {
+    min-width: 150px;  /* smaller width on mobile */
+  }
+}
+
+.fc .fc-timegrid-col {
+  width: 200px;   /* force exact width, overrides min-width */
+}
+
+.fc-col-header  {
+  width:max-content !important
+}
+
+/* For all browsers */
+
+
+/* Chrome, Edge, Safari */
+.fc .fc-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Force each resource column width */
+.fc-col-header-cell,
+.fc-timegrid-col-frame,
+.fc-timegrid-col-events {
+  min-width: 200px;  /* adjust width based on number of resources */
+  flex: 0 0 auto;    /* prevent flex shrink */
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling on mobile / trackpad */
+.fc .fc-scroller {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Outer wrapper for horizontal scrolling */
+/* .calendar-wrapper {
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  touch-action: pan-x pan-y;
+} */
+
+/* Force calendar inner grid width to content */
+/* .fc,
+.fc .fc-view-harness,
+.fc .fc-timegrid,
+.fc .fc-col-header,
+.fc .fc-scrollgrid {
+  width: max-content !important;
+  min-width: 100% !important;
+} */
+
+/* Resource columns should be wide enough to trigger horizontal overflow */
+/* .fc .fc-timegrid-col,
+.fc-col-header-cell,
+.fc-timegrid-col-frame,
+.fc-timegrid-col-events {
+  min-width: 220px !important;
+  width: 220px !important;
+  flex: 0 0 auto !important;
+} */
+
+/* Ensure scrollers are horizontal */
+/* .fc .fc-scroller,
+.fc .fc-scroller-harness {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+} */
+
+/* Make left time column sticky */
+.fc .fc-timegrid-axis {
+  position: sticky;
+  left: 0;
+  z-index: -5;
+  background-color: #fff;  /* background so it doesn’t overlap events */
+  border-right: 1px solid #ddd;  /* optional border */
+}
+
+/* Smooth horizontal scroll */
+.fc .fc-scroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* mobile */
+  scroll-behavior: smooth;
+}
+
+
+
+
